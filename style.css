@@ -1,0 +1,416 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: system-ui;
+}
+input,
+input:focus,
+select,
+select:focus,
+a,
+a:focus,
+div,
+div:focus,
+button,
+button:focus,
+fieldset,
+fieldset:focus,
+textarea,
+textarea:focus {
+  outline: none;
+}
+.mainHolder {
+  width: 90%;
+  margin: auto;
+}
+button {
+  cursor: pointer;
+}
+
+.signHolder {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.signHolder .circle {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 50px;
+  height: 50px;
+  background-color: #000;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.signHolder .circle::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 25px;
+  height: 50px;
+  background-color: #fff;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+
+.signHolder .descriptionHolder {
+  position: relative;
+  background-color: #000;
+  color: #ffffff;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.signHolder .descriptionHolder::before {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-top: 25px solid #000;
+  border-left: 25px solid #000;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+}
+
+.signHolder .descriptionHolder::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: 1px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid #fff;
+  border-left: 25px solid #fff;
+  border-right: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-top-left-radius: 50px;
+}
+
+.signHolder .descriptionHolder .imgHolder {
+}
+
+.signHolder .descriptionHolder .imgHolder img {
+}
+
+.signHolder .descriptionHolder p {
+  position: relative;
+
+  margin: 0;
+  padding: 10px;
+  box-sizing: border-box;
+  padding-left: 50px;
+  font-size: 45px;
+  width: max-content;
+}
+
+.signHolder .descriptionHolder p b {
+  opacity: 0.7;
+}
+
+.signHolder .descriptionHolder p::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50px;
+  width: 40%;
+  height: 6px;
+  background-color: #ffffff;
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.signHolder .descriptionHolder .switcher {
+  padding: 10px;
+  box-sizing: border-box;
+  padding-left: 50px;
+  min-height: 200px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.signHolder .descriptionHolder .switcher button {
+  padding: 7px 14px;
+  box-sizing: border-box;
+
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 120px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  transition: all 0.25s linear;
+}
+
+.signHolder .descriptionHolder .switcher button:hover,
+.signHolder .formHolder form input[type="submit"]:hover {
+  filter: invert(1);
+  animation: invertBtn 0.5s linear;
+}
+
+.signHolder .descriptionHolder .switcher button:hover img {
+  animation: transArrow 0.5s linear alternate infinite;
+}
+
+.signHolder .descriptionHolder .switcher button img {
+  width: 20px;
+  margin-left: 10px;
+}
+
+.signHolder .formHolder {
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.signHolder .formHolder::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 25px solid transparent;
+  border-right: 25px solid #fff;
+  border-bottom: 25px solid #fff;
+}
+
+.signHolder .formHolder::after {
+  content: "";
+  position: absolute;
+  left: -50px;
+  bottom: 1px;
+  width: 0;
+  height: 0;
+  border-top: 25px solid transparent;
+  border-left: 25px solid transparent;
+  border-right: 25px solid #000;
+  border-bottom: 25px solid #000;
+  border-bottom-right-radius: 50px;
+}
+
+.signHolder .formHolder form {
+  display: flex;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 400px;
+}
+
+.signHolder .formHolder form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.signHolder .formHolder form .form-group button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  width: fit-content;
+  border: none;
+}
+.signHolder .formHolder form .form-group button img {
+  width: 20px;
+}
+
+.signHolder .formHolder form .form-group span {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.signHolder .formHolder form .form-group input,
+.signHolder .formHolder form input {
+  padding: 6px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 14px;
+}
+
+.signHolder .formHolder form .form-group input {
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+  padding-left: 0;
+}
+
+.signHolder .formHolder form input[type="submit"] {
+  margin-top: 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  text-transform: capitalize;
+
+  width: max-content;
+  padding: 12px 35px;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.signHolder .formHolder form p.err {
+  color: firebrick;
+}
+
+.signHolder .formHolder form p.success {
+  color: green;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#formLoading {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#formLoading .loader {
+  border: 7px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 7px solid #000;
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: flex !important;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 500px) {
+  .signHolder .descriptionHolder .imgHolder,
+  .signHolder .descriptionHolder .imgHolder img {
+    width: 100%;
+  }
+  .signHolder .descriptionHolder p {
+    font-size: 30px;
+  }
+
+  .signHolder .descriptionHolder .switcher {
+    flex-direction: column;
+    min-height: 150px;
+    align-items: flex-start;
+  }
+
+  .signHolder .descriptionHolder .switcher button {
+    margin-bottom: 5px;
+  }
+
+  .signHolder .descriptionHolder p,
+  .signHolder .descriptionHolder .switcher {
+    padding-left: 20%;
+  }
+
+  .signHolder .formHolder {
+    padding: 20px;
+  }
+  .signHolder .formHolder form {
+    padding: 0;
+  }
+  .signHolder .formHolder form .form-group {
+    margin-bottom: 25px;
+    position: relative;
+  }
+  .signHolder .formHolder form .form-group span {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  .signHolder .formHolder form .form-group input {
+    font-size: 13px;
+  }
+  .signHolder .formHolder form input[type="submit"] {
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 10px 25px;
+    transition: all 0.25s linear;
+    width: 100%;
+  }
+
+  .signHolder .formHolder form p#error {
+    font-size: 13px;
+  }
+
+  .signHolder .circle {
+    display: none;
+  }
+}
+
+/* animation */
+
+@keyframes transArrow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes invertBtn {
+  0% {
+    filter: invert(0);
+  }
+  100% {
+    filter: invert(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
